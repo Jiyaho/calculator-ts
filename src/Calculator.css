@@ -1,0 +1,76 @@
+.wrapper {
+  box-sizing: border-box;
+  max-width: 450px;
+  min-height: 450px;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 1.8rem;
+  border: 0.5px solid #4e4e4e;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  width: 112.5px;
+  font-family: sans-serif;
+}
+.modifiers button {
+  background-color: #747272;
+}
+.operations button {
+  background-color: orange;
+}
+.digits button {
+  background-color: #8c8b8b;
+}
+.digits button:nth-child(10) {
+  width: 225px;
+  border-bottom-left-radius: 15px;
+}
+.operations button:nth-child(5) {
+  border-bottom-right-radius: 15px;
+}
+/* All things Grid, Flexbox, Box Alignment */
+.wrapper,
+.subgrid {
+  display: grid;
+}
+.wrapper {
+  grid-template-areas:
+    'result result result result'
+    'modif modif modif oper'
+    'digit digit digit oper'
+    'digit digit digit oper'
+    'digit digit digit oper'
+    'digit digit digit oper';
+  grid-auto-columns: 1fr;
+}
+.modifiers {
+  grid-area: modif;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+.operations {
+  grid-area: oper;
+}
+.digits {
+  grid-area: digit;
+  display: flex;
+  flex-wrap: wrap;
+}
+.result_input {
+  grid-area: result;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 12px 0px;
+  font-size: 3rem;
+  background-color: rgb(88, 88, 88);
+  color: white;
+  height: 100px;
+  margin-bottom: -40px;
+  box-sizing: border-box;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  font-weight: 100;
+}
